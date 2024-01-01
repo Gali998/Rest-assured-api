@@ -26,4 +26,17 @@ public class Chapter2Test {
                 assertThat().
                 contentType(ContentType.JSON);
     }
+
+    /**
+     * same as checkContentType
+     */
+    @Test
+    public void checkContentTypeWithString() {
+        given().
+                when().
+                get("http://zippopotam.us/us/90210").
+                then().
+                assertThat().
+                contentType("application/json");
+    }
 }
