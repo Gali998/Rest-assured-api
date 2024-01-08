@@ -39,4 +39,14 @@ public class Chapter2Test {
                 assertThat().
                 contentType("application/json");
     }
+
+    @Test
+    public void logRequestAndResponseDetails(){
+        given().
+                log().all().
+                when().
+                get("http://zippopotam.us/us/90210").
+                then().
+                log().body();
+    }
 }
